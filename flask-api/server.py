@@ -14,6 +14,8 @@ dummy_data = [
         "timestamp": "2022-11-25 22:10:05"
     }]
 
+sensor_data_list = []
+
 @app.route('/sensor/data', methods=['POST', 'GET'])
 def sensor_data():
     if request.method == 'POST':
@@ -21,7 +23,7 @@ def sensor_data():
         print(data)
         return jsonify({'message': 'Data received!'})
     else:
-        return jsonify(dummy_data)
+        return jsonify(sensor_data_list)
     
 
 if __name__ == '__main__':
